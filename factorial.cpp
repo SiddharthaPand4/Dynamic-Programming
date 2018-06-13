@@ -2,15 +2,15 @@
 
 using namespace std;
 
-int cache[100001];
+long long cache[100001];
 
-int fact(int n)
+long long fact(int n)
 {
     if(n==0)
         return 1;
     if(cache[n]!=-1)
         return cache[n];
-    cache[n]=n*fact(n-1);
+    cache[n]=(n*fact(n-1))%(1000000007);
     return cache[n];
 }
 
@@ -24,7 +24,7 @@ int main(void)
     {
         int n;
         cin>>n;
-        int ans=fact(n);
+        long long ans=fact(n);
         cout<<ans<<endl;
     }
     return 0;

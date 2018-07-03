@@ -10,7 +10,7 @@ long long fact(int n)
         return 1;
     if(cache[n]!=-1)
         return cache[n];
-    cache[n]=(n*fact(n-1))%(1000000007);
+    cache[n]=n*fact(n-1);
     return cache[n];
 }
 
